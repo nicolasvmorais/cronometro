@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cronômetro</title>
+    <link src="styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,900;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <img src="./img/151770.png" />
+      <h1>Cronômetro</h1>
+      <div class="button-container">
+        <p class="tempo">0</p>
+        <button onclick="start()" class="start">Start</button>
+        <button onclick="stop()" class="stop">Stop</button>
+      </div>
+    </div>
+  </body>
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+      font-family: "Lato", sans-serif;
+      background-color: #79769c;
+    }
+
+    img {
+      width: 230px;
+      margin-left: 960px;
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 900;
+      font-size: 100px;
+      margin-left: 435px;
+      margin-top: 10px;
+    }
+
+    .button-container {
+      background-color: #faebd7;
+      margin-top: 50px;
+      width: 225px;
+      height: 275px;
+      border-radius: 20px;
+      margin-left: 960px;
+    }
+
+    .stop {
+      width: 130px;
+      margin-top: 25px;
+      margin-left: 60px;
+      border-radius: 20px;
+      background: #575280;
+      border: 1px #282733;
+      cursor: pointer;
+      height: 35px;
+    }
+
+    .start {
+      width: 130px;
+      margin-top: 25px;
+      margin-left: 60px;
+      border-radius: 20px;
+      background: #575280;
+      border: 1px #282733;
+      cursor: pointer;
+      height: 35px;
+    }
+
+    .tempo {
+      background-color: #faebd7;
+      font-size: 50px;
+      padding-top: 40px;
+      margin-left: 110px;
+      margin-right: 190px;
+    }
+  </style>
+
+  <script>
+    let number = 1;
+    let cron;
+    let h1 = document.querySelector(".tempo");
+
+    function start() {
+      cron = setInterval(() => {
+        number++;
+        h1.innerHTML = number;
+      }, 1000);
+    }
+
+    function stop() {
+      clearInterval(cron);
+    }
+    console.log(h1);
+  </script>
+</html>
